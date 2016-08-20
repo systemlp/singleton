@@ -16,7 +16,7 @@ public class StaticSingleton {
     }
 
     private static class SingletonFactory {
-        private static StaticSingleton instance = null;
+        private static StaticSingleton instance = new StaticSingleton();
     }
 
     public static StaticSingleton getInstance() {
