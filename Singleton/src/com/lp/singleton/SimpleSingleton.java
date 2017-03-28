@@ -12,9 +12,9 @@ package com.lp.singleton;
 public class SimpleSingleton {
 
     private static SimpleSingleton instance = null;
-
+    
     private SimpleSingleton() {
-
+        
     }
 
     public static SimpleSingleton getInstance() {

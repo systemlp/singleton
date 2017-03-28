@@ -13,8 +13,16 @@ public class SimpleSingletonSync {
 
     private volatile static SimpleSingletonSync instance = null;
 
-    private SimpleSingletonSync() {
+    private static boolean flag;
 
+    private SimpleSingletonSync() {
+        synchronized (SimpleSingletonSync.class) {
+            if (!flag) {
+                flag = !flag;
+            } else {
+                throw new RuntimeException("请正常使用该单例类");
+            }
+        }
     }
 
     public static SimpleSingletonSync getInstance() {
